@@ -1,0 +1,69 @@
+a {
+ text-decoration: none;
+}
+
+body {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+  }
+
+.background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    background-size: cover;
+}
+.background-img{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -2;
+    background-size: cover;
+}
+
+#navBar {
+    display: block;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: rgba(169, 169, 169, 0.5);
+    backdrop-filter: blur(3px);
+    padding: 10px 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.router{
+    display: flex;
+    font-size: 20px;
+    margin-left: 10px;
+    justify-content: center;
+}
+
+.routeElement{
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.routeElement:hover {
+    color: blue;
+  }
+
+.active {
+    font-weight: bold;
+}
+
+.router-outlet[loading] {
+    display: none;  
+}
+  
