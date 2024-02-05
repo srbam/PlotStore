@@ -40,6 +40,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
+    margin-bottom: 40px;
 }
 
 .router{
@@ -56,7 +57,7 @@ body {
 }
 
 .routeElement:hover {
-    color: blue;
+    color: black;
   }
 
 .active {

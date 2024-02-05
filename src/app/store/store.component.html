@@ -1,2 +1,7 @@
-<h1 style="position: relative;">aaaaaaa</h1>
-<p style="position: relative;">One-Piece-The-Thousand-Sunny-Bateau-Remix</p>
+<div class="container">
+    <div class="product" *ngFor="let product of products">
+      <div class="product-name">{{ product.name }}</div>
+      <div class="product-price">{{ product.price | currency }}</div>
+    </div>
+  </div>
+  
