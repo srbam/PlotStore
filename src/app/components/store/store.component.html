@@ -1,0 +1,12 @@
+<div style="justify-content: center; display: flex; margin-bottom: 10px;">
+  <button class="custom-button" id="createProductButton" (click)="redirectToAbout()">Create Product</button>
+</div>
+<div class="container">
+  <div class="product" *ngFor="let product of products">
+    <div class="product-image-container">
+      <img [src]="product.image" alt="Product Image" class="product-image">
+      <div class="product-name">{{ product.name }}</div>
+      <div class="product-price">{{ product.price + '.00$'}}</div>
+    </div>
+  </div>
+</div>
