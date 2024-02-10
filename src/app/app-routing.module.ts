@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { StoreComponent } from './components/store/store.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent }from './components/about/about.component';
+import { CreateProductFormComponent } from './components/store/create-product-form/create-product-form.component';
 
 
 const routes: Routes = [
@@ -10,7 +11,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'store', component: StoreComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'product/add', component: AboutComponent }
+  { path: 'product/add', component: CreateProductFormComponent }
 ];
 
 @NgModule({
