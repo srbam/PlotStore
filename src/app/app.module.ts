@@ -7,6 +7,7 @@ import { StoreComponent } from './components/store/store.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent }from './components/about/about.component';
 import { CreateProductFormComponent } from './components/store/create-product-form/create-product-form.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { CreateProductFormComponent } from './components/store/create-product-fo
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
