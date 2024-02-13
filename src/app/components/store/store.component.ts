@@ -26,7 +26,7 @@ export class StoreComponent implements OnInit{
           this.products = products;
         });
     }
-
+    
   redirectToAbout(): void {
     this.router.navigateByUrl('/product/add');
   }
