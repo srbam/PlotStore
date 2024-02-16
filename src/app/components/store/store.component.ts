@@ -9,25 +9,31 @@ import { ProductService } from '../../services/products.service'
   styleUrl: './store.component.scss'
 })
 
-export class StoreComponent implements OnInit{
+export class StoreComponent implements OnInit {
   constructor(
     private router: Router,
     private productService: ProductService
-    ) {}
-    products: Product[] = [];
+  ) { }
+  products: Product[] = [];
 
-    ngOnInit(): void {
-      this.getProducts();
-    }
-  
-    getProducts(): void {
-      this.productService.getProducts()
-        .subscribe(products => {
-          this.products = products;
-        });
-    }
-    
-  redirectToAbout(): void {
+  ngOnInit(): void {
+    this.getProducts();
+  }
+
+  getProducts(): void {
+    this.productService.getProducts()
+      .subscribe(products => {
+        this.products = products;
+      });
+  }
+
+  redirectToCreateProduct(): void {
     this.router.navigateByUrl('/product/add');
+  }
+
+  redirectToProductPage(productId: string) {
+    if (productId) {
+      this.router.navigate(['/product', productId]);
+    }
   }
 }

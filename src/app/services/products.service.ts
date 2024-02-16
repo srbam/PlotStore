@@ -17,6 +17,10 @@ export class ProductService {
     return this.http.get<Product[]>(`${this.apiUrl}products`);
   }
 
+  getProductById(id: string): Observable<Product> {
+    return this.http.get<Product>(`${this.apiUrl}products/${id}`);
+  }
+
   createProduct(productData: any): Observable<any> {
     return this.http.post(`${this.apiUrl}products`, productData);
   }

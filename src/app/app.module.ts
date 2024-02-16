@@ -8,6 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent }from './components/about/about.component';
 import { CreateProductFormComponent } from './components/store/create-product-form/create-product-form.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductPageComponent } from './components/store/product-page/product-page.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     StoreComponent,
     HomeComponent,
     AboutComponent,
-    CreateProductFormComponent
+    CreateProductFormComponent,
+    ProductPageComponent
   ],
   imports: [
     BrowserModule,
