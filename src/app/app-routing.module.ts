@@ -7,13 +7,17 @@ import { CreateProductFormComponent } from './components/store/create-product-fo
 import { ProductPageComponent } from './components/store/product-page/product-page.component';
 
 
+const storeRoutes: Routes = [
+  { path: '', component: StoreComponent },
+  { path: 'product/add', component: CreateProductFormComponent },
+  { path: 'product/:id', component: ProductPageComponent }
+];
+
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'store', component: StoreComponent },
+  { path: 'store', children: storeRoutes },
   { path: 'about', component: AboutComponent },
-  { path: 'product/add', component: CreateProductFormComponent },
-  { path: 'product/:id', component: ProductPageComponent }
 ];
 
 @NgModule({

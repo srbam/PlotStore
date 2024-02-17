@@ -45,4 +45,10 @@
   .custom-button:hover {
     background-color: rgba(169, 169, 169, 0.7);
   }
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
   

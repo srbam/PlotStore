@@ -11,5 +11,8 @@
       <label for="imagem">Imagem:</label>
       <input type="file" id="imagem" name="imagem" accept="image/*" (change)="handleImageInput($event)">
     </div>
-    <button type="submit" class="custom-button">Enviar</button>
+    <div class="button-container">
+      <button class="custom-button" (click)="redirectToStore()">Voltar</button>
+      <button type="submit" class="custom-button">Enviar</button>
+    </div>
   </form>

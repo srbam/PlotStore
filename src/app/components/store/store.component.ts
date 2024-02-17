@@ -28,12 +28,12 @@ export class StoreComponent implements OnInit {
   }
 
   redirectToCreateProduct(): void {
-    this.router.navigateByUrl('/product/add');
+    this.router.navigateByUrl('/store/product/add');
   }
 
   redirectToProductPage(productId: string) {
     if (productId) {
-      this.router.navigate(['/product', productId]);
+      this.router.navigate(['/store/product/', productId]);
     }
   }
 }
