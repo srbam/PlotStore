@@ -14,7 +14,10 @@ export class FileService {
   constructor(private http: HttpClient) { }
 
   createFile(image: any): Observable<any> {
-    console.log(image);
     return this.http.post(this.apiPath + this.model, {image: image});
+  }
+
+  getFileByName(fileName: string){
+    return this.http.get(this.apiPath + this.model + `/${fileName}`);
   }
 }
