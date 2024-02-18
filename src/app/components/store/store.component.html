@@ -4,7 +4,7 @@
 <div class="container" >
   <div class="product" *ngFor="let product of products" (click)="redirectToProductPage(product.id)">
     <div class="product-image-container">
-      <img [src]="product.image" alt="Product Image" class="product-image">
+      <img *ngIf="imgIsLoaded" src="data:image/jpeg;base64, {{ product.image }}" alt="Product Image" class="product-image">
       <div class="product-name">{{ product.name }}</div>
       <div class="product-price">{{ product.price + '.00$'}}</div>
     </div>
