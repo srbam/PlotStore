@@ -16,8 +16,11 @@ export class StoreComponent implements OnInit {
     private productService: ProductService,
     private fileService: FileService
   ) { }
+
   products: Product[] = [];
   imgIsLoaded: boolean = false;
+  imageDictionary: { [key: string]: string } = {};
+
   async ngOnInit(){
     this.getProducts();
   }
@@ -28,11 +31,14 @@ export class StoreComponent implements OnInit {
         this.products = products;
         products.map((product) => {
           this.fileService.getFileByName(product.image).subscribe((response: any) => {
-            product.image = response.imageURL;
-            this.imgIsLoaded = true;
+            this.imageDictionary[product.image] = response.imageURL;
           })
         })
       });
+  }
+
+  getImageUrl(imageKey: string): string {
+    return this.imageDictionary[imageKey];
   }
 
   redirectToCreateProduct(): void {
