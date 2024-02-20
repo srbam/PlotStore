@@ -21,12 +21,14 @@
 
     handleImageInput(event: any) {
       const file = event.target.files[0];
-      const reader = new FileReader();
-      reader.onload = () => {
-        const base64String = reader.result as string;
-        this.file = base64String;
-      };
-      reader.readAsDataURL(file);
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = () => {
+          const base64String = reader.result as string;
+          this.file = base64String;
+        };
+        reader.readAsDataURL(file);
+      }
     }
 
     async submitForm(form: any) {

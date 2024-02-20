@@ -10,6 +10,9 @@
     <div class="product">
       <label for="imagem">Imagem:</label>
       <input type="file" id="imagem" name="imagem" accept="image/*" (change)="handleImageInput($event)">
+      <div>
+        <img style="width: 96%; height: 90%; object-fit: contain;" *ngIf="file !== undefined" [src]="file" alt="Imagem do Produto">
+      </div>
     </div>
     <div class="button-container">
       <button class="custom-button" (click)="redirectToStore()">Voltar</button>
