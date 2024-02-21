@@ -1,8 +1,8 @@
 <div style="justify-content: center; display: flex; margin-bottom: 10px;">
-  <button class="custom-button" id="createProductButton" (click)="redirectToCreateProduct()">Create Product</button>
+  <button class="custom-button" id="createProductButton" routerLink="/store/product/add">Create Product</button>
 </div>
 <div class="container" >
-  <div class="product" *ngFor="let product of products" (click)="redirectToProductPage(product.id)">
+  <div class="product" *ngFor="let product of products" routerLink="/store/product/{{product.id}}">
     <div class="product-image-container">
       <img *ngIf="getImageUrl(product.image)" src="data:image/jpeg;base64, {{  getImageUrl(product.image) }}" alt="Product Image" class="product-image">
       <div class="product-name">{{ product.name }}</div>

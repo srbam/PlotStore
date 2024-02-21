@@ -40,14 +40,4 @@ export class StoreComponent implements OnInit {
   getImageUrl(imageKey: string): string {
     return this.imageDictionary[imageKey];
   }
-
-  redirectToCreateProduct(): void {
-    this.router.navigateByUrl('/store/product/add');
-  }
-
-  redirectToProductPage(productId: string) {
-    if (productId) {
-      this.router.navigate(['/store/product/', productId]);
-    }
-  }
 }
