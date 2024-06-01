@@ -17,14 +17,19 @@ export class ProductPageComponent implements OnInit{
     private fileService: FileService
     ) {}
 
-  product: any;
-  fileURL: any;
+  public product: any;
+  public fileURL: any;
+  public productId: string = '';
+
+  redirectToStore(): void {
+    this.router.navigateByUrl('/store');
+  }
 
   async ngOnInit(){
     this.route.params.subscribe(async params => {
-      const productId = params['id'];
+      this.productId = params['id'];
       try{
-        await this.productService.getProductById(productId).subscribe(async product => {
+        await this.productService.getProductById(this.productId).subscribe(async product => {
           this.product = product;
           await this.fileService.getFileByName(this.product.image).subscribe((response: any) => {
             this.fileURL = response?.imageURL;
@@ -37,7 +42,19 @@ export class ProductPageComponent implements OnInit{
     });
   }
 
-  redirectToStore(): void {
-    this.router.navigateByUrl('/store');
+  async deleteProduct(id: string){
+    try{
+      this.productService.deleteProductById(id).subscribe({
+        next: () => {
+          console.log("Produto deletado com sucesso");
+          this.redirectToStore();
+        },
+        error: (error) => {
+          console.log("Erro ao deletar produto", error);
+        }
+      });
+    } catch (error){
+      console.log("Erro ao deletar produto");
+    }
   }
 }
